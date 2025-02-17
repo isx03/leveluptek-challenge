@@ -23,9 +23,9 @@ Challenge to develop a API REST with Laravel
 docker compose up -d
 ```
 
-3. Execute migrations
+3. Execute migrations *(only the first time)*
 ```bash
-docker compose exec app php artisan migrate *(only the first time)*
+docker compose exec app php artisan migrate
 ```
 
 4. Execute user seed *(only the first time)*
