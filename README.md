@@ -18,17 +18,27 @@ Challenge to develop a API REST with Laravel
     * DB_USERNAME: User to connect with database.
     * DB_PASSWORD: User's password to connect with database.
 
-2. Start Containers
+2. Build image
+```bash
+docker compose build --no-cache
+```
+
+3. Start Containers
 ```bash
 docker compose up -d
 ```
 
-3. Execute migrations *(only the first time)*
+4. Install dependencies
+```bash
+docker compose exec app composer install --no-scripts --no-autoloader && composer dump-autoload --optimize
+```
+
+5. Execute migrations *(only the first time)*
 ```bash
 docker compose exec app php artisan migrate
 ```
 
-4. Execute user seed *(only the first time)*
+6. Execute user seed *(only the first time)*
 ```bash
 docker compose exec app php artisan db:seed --class=UserSeeder
 ```
