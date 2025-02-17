@@ -28,7 +28,7 @@ docker compose build --no-cache
 docker compose up -d
 ```
 
-4. Install dependencies
+4. Install dependencies *(only the first time)*
 ```bash
 docker compose exec app composer install --no-scripts --no-autoloader && composer dump-autoload --optimize
 ```
