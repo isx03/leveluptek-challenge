@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redis;
 use PHPUnit\Framework\Attributes\Depends;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -148,6 +149,7 @@ class ApiTest extends TestCase
         $kernel = $app->make(\Illuminate\Contracts\Console\Kernel::class);
         $kernel->call('migrate:fresh');
         $kernel->call('db:seed --class=UserSeeder');
+        Redis::flushall();
         parent::tearDownAfterClass();
     }
 
