@@ -18,14 +18,14 @@ Challenge to develop a API REST with Laravel
     * DB_USERNAME: User to connect with database.
     * DB_PASSWORD: User's password to connect with database.
 
-2. Execute migrations
-```bash
-docker compose run -rm app php artisan migrate
-```
-
-3. Start Container
+2. Start Containers
 ```bash
 docker compose up -d
+```
+
+3. Execute migrations
+```bash
+docker compose exec app php artisan migrate *(only the first time)*
 ```
 
 4. Execute user seed *(only the first time)*
@@ -138,10 +138,3 @@ If you want to run the test, you must to execute the next command:
 docker compose exec app php artisan test
 ```
 ![Bash Execute Tests](./readme-files/testing.png)
-
-
-
-
-
-
-
